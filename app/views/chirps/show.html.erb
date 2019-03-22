@@ -1,4 +1,23 @@
  <h3> <%= @chirp.formatted_time %></h3>
    <p> <%= @chirp.content %></p>
    <%= link_to("Edit", "/chirps/#{@chirp.id}/edit") %>
-   <%= link_to("Delete Chirp", "/chirps/#{@chirp.id}", method: :delete, data: {confirm: "Are you sure"}) %>
+   <%= link_to("Delete Chirp", "/chirps/#{@chirp.id}", method: :delete, data: {confirm: "Are you sure?"}) %>
+
+<%= form_tag("/chirps/#{@chirp.id}/comments", method: :post) do %>
+
+<div class="form-group">
+  
+<%= label_tag(:content, "Leave a comment:") %>
+<%= text_area_tag(:content, nil, size: '40x10', class: "form-control")%>
+  
+</div>
+
+<%= submit_tag("Add comment", class: "btn btn-danger") %>
+  <%end%>
+
+
+   <h4>Comments:</h4>
+   <% @chirp.comments.each do |comment| %>
+   <p> <%= comment.content %></p>
+   <%= link_to("Delete", "/chirps/#{@chirp.id}/comments/#{comment.id}", method: :delete) %>
+   <% end %>
