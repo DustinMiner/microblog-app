@@ -1,11 +1,10 @@
 <h1>Edit your Chirp</h1>
 
 <%= form_tag("/chirps/#{@chirp.id}", method: :put) do %>
-
-<%= label_tag('content', 'Edit Chirp Content:') %>
-<br>
-<%= text_area_tag('content', @chirp.content, size: '40x10') %>
-<br>
-<%= submit_tag("Update Chirp") %>
+<div class= "form-group">
+  <%= label_tag('content', 'Edit Chirp Content:') %>
+  <%= text_area_tag('content', @chirp.content, class: "form-control") %>
+</div>
+  <%= submit_tag("Update Chirp", class: "btn btn-success") %>
 
 <% end %>
