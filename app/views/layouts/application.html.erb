@@ -17,7 +17,7 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav mr-auto">
           <li class="nav-item <%= 'active' if current_page?("/chirps") %>" >
             <%= link_to("/chirps", class: "nav-link") do %>
               Feed <%= (content_tag :span, "(current)", :class => "sr-only") if 
@@ -36,7 +36,7 @@
           <% if user_signed_in? %>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <%= current_user.email %>
+                <%= current_user.first_name %>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <%= link_to('Edit Profile', edit_user_registration_path, class: "dropdown-item") %> 
