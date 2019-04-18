@@ -17,7 +17,12 @@ def index
   end
 
   def create
-    @chirp = Chirp.new(content:params[:content])
+    @chirp = Chirp.new(
+                      content:params[:content],
+                      user_id: current_user.id
+
+                      )
+
     if @chirp.save
       flash[:success] = "Chirp successfully created!"
       redirect_to "/chirps"
