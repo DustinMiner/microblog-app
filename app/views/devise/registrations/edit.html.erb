@@ -16,6 +16,13 @@
         <%= f.text_field :last_name, class: "form-control" %>
       </div>
   </div>
+  
+  <div class="row">
+    <div class="field form-group col-lg-4">
+      <%= f.label(:profile_image, "Add a profile image") %>
+      <br>
+      <%= f.file_field(:profile_image) %>
+    </div>
 
 <div class="row">
   <div class="field form-group col-lg-4">

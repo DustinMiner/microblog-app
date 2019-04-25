@@ -5,6 +5,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'devise'
+gem "aws-sdk-s3", require: false
+
 
 ruby '2.5.0'
 
